@@ -76,7 +76,45 @@ Router.post('/api/save/student',async(req,res)=>{
         res.send(error.message)
     }
 });
-Router.delete('/api/student/:name/:department?',async(req,res)=>{
+
+/**
+ * @openapi
+ * /api/student/{name}:
+ *   delete:
+ *     summary: Delete a user by ID
+ *     description: Deletes a student from the database based on the provided student name.
+ *     parameters:
+ *       - in: path
+ *         name: name
+ *         required: true
+ *         description: The name of the student to delete
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: student deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: User deleted successfully
+ *       404:
+ *         description: student not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: student not found
+ *       500:
+ *         description: Server error
+ */
+Router.delete('/api/student/:name',async(req,res)=>{
     let stname=req.params.name;
     console.log(req.params)
     try{
