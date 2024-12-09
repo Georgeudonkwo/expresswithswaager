@@ -5,7 +5,7 @@ const Router=express.Router()
 
 /**
  * @openapi
- * /students:
+ * /api/students:
  *  get:
  *   summary: Returns students from mongodb
  *   description: Retrieve all the students from the source
@@ -22,7 +22,7 @@ const Router=express.Router()
  *          department:
  *          gradepoint:
  */
-Router.get('/students',async(req,res)=>{
+Router.get('/api/students',async(req,res)=>{
     try{
         const results=await student.find();
         res.send(results);}
@@ -33,7 +33,7 @@ catch(error){
 
 /**
  * @openapi
- * /save/student:
+ * /api/save/student:
  *   post:
  *     summary: Create an example resource
  *     description: Accepts data and returns the created resource.
@@ -59,7 +59,7 @@ catch(error){
  *                 department:
  *                 gradepoint:
  */
-Router.post('/save/student',async(req,res)=>{
+Router.post('/api/save/student',async(req,res)=>{
     try{
         let data=req.body
         let stu=new student();
@@ -76,7 +76,7 @@ Router.post('/save/student',async(req,res)=>{
         res.send(error.message)
     }
 });
-Router.delete('/student/:name/:department?',async(req,res)=>{
+Router.delete('/api/student/:name/:department?',async(req,res)=>{
     let stname=req.params.name;
     console.log(req.params)
     try{
