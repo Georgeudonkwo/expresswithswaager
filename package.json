@@ -1,0 +1,33 @@
+{
+  "name": "express-sawgger",
+  "version": "1.0.0",
+  "description": "\"integrate swagger for api description\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "keywords": [
+    "\"api\"",
+    "\"swagger\"",
+    "\"express\"",
+    "\"nodemone\"",
+    "\"node.js\""
+  ],
+  "author": "\"George Udonkwo\"",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-sawgger": "file:",
+    "mongoose": "^8.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
